@@ -24,7 +24,7 @@ function setup(){
          }
         }
     
-    umbrella = new Umbrella();
+    umbrella = new Umbrella(250,400);
     
 
     Engine.run(engine);
