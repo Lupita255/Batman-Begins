@@ -29,10 +29,6 @@ function setup(){
 function draw(){
     background(0)
 
-    for(var i=0; i<maxDrops;i++){
-        drops[i].display();
-        drops[i].update();
-      }
   
  
     maxDrops.display();
