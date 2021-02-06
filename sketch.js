@@ -7,7 +7,7 @@ const Render = Matter.Render;
 var maxDrops = 100;
 var drops = [];
 
-var umbrella;
+var man;
 
 function preload(){
     
@@ -24,7 +24,7 @@ function setup(){
          }
         }
     
-    umbrella = new Umbrella(250,400);
+    man = new Umbrella(250,400);
     
 
     Engine.run(engine);
@@ -33,7 +33,7 @@ function setup(){
 function draw(){
     background(0)
 
-  umbrella.display();
+  man.display();
  
     maxDrops.display();
 }   
