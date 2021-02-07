@@ -19,7 +19,7 @@ class umbrella{
 		push()
 		imageMode(CENTER);
 		ellipseMode(CENTER);
-		image(this.image,pos.x, pos.y + 70, 300, 300)
+		image(this.image, this.x, this.y)
 		pop()
  }
 }
