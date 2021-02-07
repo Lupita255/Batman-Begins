@@ -17,13 +17,9 @@ class umbrella{
 	{
 		var umbrellaPos=this.body.position;	
 		push()
-		translate(umbrellaPos.x, umbrellaPos.y);
-		// rectMode(CENTER);
-		rotate(this.body.angle)
-		fill(255,0,255)
 		imageMode(CENTER);
 		ellipseMode(CENTER);
-		image(this.image, 0,0,this.r*2, this.r*2)
+		image(this.image,pos.x, pos.y + 70, 300, 300)
 		pop()
  }
 }
