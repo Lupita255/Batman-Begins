@@ -15,19 +15,24 @@ function setup(){
  engine=Engine.create();
  world=engine.world;
  createCanvas(400,400);  
-  boy=new Boy(200,300,200,200);  
-  for(var i=0;i<maxDrops;i++){
+  
+ boy=new Boy(200,300,200,200);  
+  
+   for(var i=0;i<maxDrops;i++){
     drops.push(new Drop(random(0,400),random(0,400),3));
+       
+   Engine.update(engine);
 }
 }
 
 function draw(){
-  Engine.update(engine);
-  background("black");  
+  background(0); 
+    
   for(var i=0;i<drops.length;i++){
     drops[i].display();
     drops[i].update();
   }
+    
   boy.display();
   
 }  
