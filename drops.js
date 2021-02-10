@@ -1,25 +1,22 @@
-class Drop {
-    constructor(x, y, r, options) {
+class Umbrella{
+    constructor(x, y) {
         var options = {
-            isStatic: false,
-            friction: 0.1,
+            isStatic: true
         }
-        this.r = r;
-        this.body = Bodies.circle(x, y, r, options);
+        
+        this.image = loadImage("walking_1.png")
+        this.body = Bodies.circle(x, y, 50, options);
+        this.radius = 50;
+
         World.add(world, this.body);
     }
 
-    display() {
-        var pos = this.body.position
-        ellipseMode(CENTER);
-        fill("aqua");
-        noStroke();
-        ellipse(pos.x,pos.y,this.r,this.r);
+    display(){
+        var pos = this.body.position;
+      
+        push();
+        imageMode(CENTER);
+        image(this.image, pos.x, pos.y + 70, 300, 300);
+        pop();
     }
-
-    update() {
-        if(this.body.position.y > height) {
-            Body.setPosition(this.body, {x: random(0,windowWidth), y: random(-400,0)});
-        }
-    }
-}
+};
