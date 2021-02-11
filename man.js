@@ -1,4 +1,4 @@
-class Umbrella{
+class Man{
     constructor(x, y) {
         var options = {
             isStatic: true
