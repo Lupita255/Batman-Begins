@@ -1,38 +1,41 @@
 const Engine = Matter.Engine;
-const World= Matter.World;
+const World = Matter.World;
 const Bodies = Matter.Bodies;
-const Constraint = Matter.Constraint;
 
-var maxDrops=100;
-var boy;
-var drops=[];
-var engine,world;
+var engine, world;
+var maxDrops = 100;
+var drops = [];
+
+
 function preload(){
-    
+
 }
 
 function setup(){
- engine=Engine.create();
- world=engine.world;
- createCanvas(400,400);  
-  
- boy=new Boy(200,300,200,200);  
-  
-   for(var i=0;i<maxDrops;i++){
-    drops.push(new Drop(random(0,400),random(0,400),3));
-       
-   Engine.update(engine);
-}
+    engine = Engine.create();
+    world = engine.world;
+
+    createCanvas(400, 700);
+    umbrella = new Umbrella(200, 500);
+
+    if(frameCount % 100 == 0){
+        for(var i = 0; i < maxDrops; i++){
+           drops.push(new Drops(random(0, 800), random(0, 800)));
+        }   
+    }
 }
 
 function draw(){
-  background(0); 
-    
-  for(var i=0;i<drops.length;i++){
-    drops[i].display();
-    drops[i].update();
-  }
-    
-  boy.display();
-  
-}  
+    Engine.update(engine);
+    background(0);
+
+
+    umbrella.display();
+
+    for(var i = 0; i < maxDrops; i++){
+        drops[i].display();
+        drops[i].update();
+    }
+
+    drawSprites();
+}   
