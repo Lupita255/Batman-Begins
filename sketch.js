@@ -5,7 +5,7 @@ const Bodies = Matter.Bodies;
 var engine, world;
 var maxDrops = 100;
 var drops = [];
-
+var umbrella;
 
 function preload(){
 
@@ -16,6 +16,7 @@ function setup(){
     world = engine.world;
 
     createCanvas(400, 700);
+    
     umbrella = new Umbrella(200, 500);
 
     if(frameCount % 100 == 0){
